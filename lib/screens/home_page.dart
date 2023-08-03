@@ -36,7 +36,7 @@ class HomePage extends ConsumerWidget {
                       margin: const EdgeInsets.symmetric(vertical: 10),
                       child: ListTile(
                         title: Text(
-                          userList[index].firstName +""+ userList[index].lastName,
+                          "${userList[index].firstName} ${userList[index].lastName}",
                           style: const TextStyle(color: Colors.white),
                         ),
                         subtitle: Text(

@@ -10,7 +10,7 @@ class DetailsPage extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: Padding(
-          padding: const EdgeInsets.all(20),
+          padding: const EdgeInsets.only(top: 50),
           child: Column(
             children: [
               Center(
@@ -19,8 +19,14 @@ class DetailsPage extends StatelessWidget {
                   backgroundImage: NetworkImage(e.avatar),
                 ),
               ),
-              Text("${e.firstName}${e.lastName}"),
-              Text(e.email),
+              const SizedBox(
+                height: 20,
+              ),
+              Text("Full Name : ${e.firstName} ${e.lastName}"),
+              const SizedBox(
+                height: 5,
+              ),
+              Text('Email: ${e.email}'),
             ],
           ),
         ),
