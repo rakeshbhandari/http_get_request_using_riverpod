@@ -10,8 +10,10 @@ class DetailsPage extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: Padding(
-          padding: const EdgeInsets.only(top: 50),
+          padding: const EdgeInsets.only(top: 50, left: 50),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Center(
                 child: CircleAvatar(
@@ -22,11 +24,19 @@ class DetailsPage extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              Text("Full Name : ${e.firstName} ${e.lastName}"),
+              Container(
+                  padding: const EdgeInsets.all(4),
+                  decoration: BoxDecoration(
+                      border: Border.all(color: Colors.yellow, width: 1)),
+                  child: Text("Full Name : ${e.firstName} ${e.lastName}")),
               const SizedBox(
-                height: 5,
+                height: 7,
               ),
-              Text('Email: ${e.email}'),
+              Container(
+                  padding: const EdgeInsets.all(4),
+                  decoration: BoxDecoration(
+                      border: Border.all(color: Colors.yellow, width: 1)),
+                  child: Text('Email: ${e.email}')),
             ],
           ),
         ),

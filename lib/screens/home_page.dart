@@ -23,33 +23,39 @@ class HomePage extends ConsumerWidget {
             padding: const EdgeInsets.symmetric(horizontal: 12),
             child: Column(
               children: [
-                Expanded(child: ListView.builder(itemBuilder: (_, index) {
-                  return InkWell(
-                    onTap: () => Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => DetailsPage(e: userList[index]),
-                      ),
-                    ),
-                    child: Card(
-                      color: Colors.blueGrey,
-                      elevation: 6,
-                      margin: const EdgeInsets.symmetric(vertical: 10),
-                      child: ListTile(
-                        title: Text(
-                          "${userList[index].firstName} ${userList[index].lastName}",
-                          style: const TextStyle(color: Colors.white),
-                        ),
-                        subtitle: Text(
-                          userList[index].email,
-                          style: const TextStyle(color: Colors.white),
-                        ),
-                        trailing: CircleAvatar(
-                          backgroundImage: NetworkImage(userList[index].avatar),
-                        ),
-                      ),
-                    ),
-                  );
-                }))
+                Expanded(
+                    child: ListView.builder(
+                        itemCount: userList.length,
+                        shrinkWrap: true,
+                        itemBuilder: (_, index) {
+                          return InkWell(
+                            onTap: () => Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    DetailsPage(e: userList[index]),
+                              ),
+                            ),
+                            child: Card(
+                              color: Colors.blueGrey,
+                              elevation: 6,
+                              margin: const EdgeInsets.symmetric(vertical: 10),
+                              child: ListTile(
+                                title: Text(
+                                  "${userList[index].firstName} ${userList[index].lastName}",
+                                  style: const TextStyle(color: Colors.white),
+                                ),
+                                subtitle: Text(
+                                  userList[index].email,
+                                  style: const TextStyle(color: Colors.white),
+                                ),
+                                trailing: CircleAvatar(
+                                  backgroundImage:
+                                      NetworkImage(userList[index].avatar),
+                                ),
+                              ),
+                            ),
+                          );
+                        }))
               ],
             ),
           );
